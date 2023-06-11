@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raw Milk Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f8f9fa;
+        }
+        .container {
+            width: 60%;
+        }
+        .result {
+            margin-bottom: 1.5em;
+            padding: 1.5em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 0.5em;
+        }
+        p {
+            margin: 0.5em 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Raw Milk Search Results</h1>
+        {% for result in results %}
+        <div class="result">
+            <h2>{{ result['Farm Name'] }}</h2>
+            <p><strong>Location:</strong> {{ result['Location'] }}</p>
+            <p><strong>Address:</strong> {{ result['Address'] }}</p>
+            <p><strong>Phone Number:</strong> {{ result['Phone Number'] }}</p>
+            <p><strong>Email Address:</strong> {{ result['Email Address'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
